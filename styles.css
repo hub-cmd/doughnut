@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    margin: 0;
+    background-color: #eaeaea;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.doughnut{
+    width: 10.5rem;
+    height: 10.5rem;
+    border-radius: 50%;
+    background: #cec17a;
+    z-index: 1;
+}
+.switch{
+    position: absolute;
+    width: 5.5rem;
+    height: 5.5rem;
+    border: 0.8rem solid white;
+    border-radius: 50%;
+    background: #FDB801;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+.switch-text{
+    font-size: 1.2rem;
+}
+.vertical{
+    position: absolute;
+    height: 100%; 
+    border-left: 0.1rem dashed #ADA6A6;
+    z-index: 2;
+    left: 50%;
+}
+.horizontal{
+    position: absolute;
+    width: 100%;
+    border-top: 0.1rem dashed #ADA6A6;
+    top: 50%;
+}
