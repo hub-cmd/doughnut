@@ -19,6 +19,7 @@ body{
     border-radius: 50%;
     background: #cec17a;
     z-index: 1;
+    position: relative;
 }
 .switch{
     position: absolute;
@@ -47,4 +48,37 @@ body{
     width: 100%;
     border-top: 0.1rem dashed #ADA6A6;
     top: 50%;
+}
+.text{
+    position: absolute;
+    font-size: 1.5rem;
+    display: none;
+}
+.first {
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.second {
+    top: 25%;
+    right: 25%;
+    transform: translate(50%, -50%) rotate(45deg);
+}
+.third{
+    bottom: 25%;
+    right: 25%;
+    transform: translate(50%, 50%) rotate(135deg);
+}
+.fourth{
+    bottom: 25%;
+    left: 25%;
+    transform: translate(-50%, 50%) rotate(-135deg);
+}
+
+.switch:hover ~.doughnut{
+    width: 12.5rem; 
+    height: 12.5rem;
+}
+.switch:hover ~.doughnut .text{
+    display: block;
 }
