@@ -1,10 +1,24 @@
 *{
     box-sizing: border-box;
 }
+:root {
+    --main-bg-color:#eaeaea;
+    --doughnut-diameter: 10.5rem; 
+    --doughnut-bg-color: #cec17a;
+    --doughnut-transformed-diameter: 12.5rem; 
+    --switch-diameter: 5.5rem;
+    --switch-border: 0.8rem solid white;
+    --switch-bg-color:#FDB801;
+    --switch-font-size: 1.2rem; 
+    --line-border: 0.1rem dashed #ADA6A6;
+    --text-font-size: 1.5rem;
+}
+
 body{
     height: 100vh;
     margin: 0;
-    background-color: #eaeaea;
+    background-color: var(--main-bg-color);
+    overflow: hidden;
 }
 .container{
     display: flex;
@@ -14,44 +28,44 @@ body{
     height: 100%;
 }
 .doughnut{
-    width: 10.5rem;
-    height: 10.5rem;
+    width: var(--doughnut-diameter);
+    height: var(--doughnut-diameter);
     border-radius: 50%;
-    background: #cec17a;
+    background-color: var(--doughnut-bg-color);
     z-index: 1;
     position: relative;
 }
 .switch{
     position: absolute;
-    width: 5.5rem;
-    height: 5.5rem;
-    border: 0.8rem solid white;
+    width: var(--switch-diameter);
+    height: var(--switch-diameter);
+    border: var(--switch-border);
     border-radius: 50%;
-    background: #FDB801;
+    background-color: var(--switch-bg-color);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 3;
 }
 .switch-text{
-    font-size: 1.2rem;
+    font-size: var(--switch-font-size);
 }
 .vertical{
     position: absolute;
     height: 100%; 
-    border-left: 0.1rem dashed #ADA6A6;
+    border-left: var(--line-border);
     z-index: 2;
     left: 50%;
 }
 .horizontal{
     position: absolute;
     width: 100%;
-    border-top: 0.1rem dashed #ADA6A6;
+    border-top: var(--line-border);
     top: 50%;
 }
 .text{
     position: absolute;
-    font-size: 1.5rem;
+    font-size: var(--text-font-size);
     display: none;
 }
 .first {
@@ -74,11 +88,10 @@ body{
     left: 25%;
     transform: translate(-50%, 50%) rotate(-135deg);
 }
-
-.switch:hover ~.doughnut{
-    width: 12.5rem; 
-    height: 12.5rem;
+.switch:hover ~ .doughnut{
+    width: var(--doughnut-transformed-diameter);
+    height: var(--doughnut-transformed-diameter);
 }
-.switch:hover ~.doughnut .text{
+.switch:hover ~ .doughnut .text{
     display: block;
 }
